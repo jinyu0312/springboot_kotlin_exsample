@@ -17,9 +17,10 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter")
+	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation("javax.validation:validation-api:2.0.1.Final")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
@@ -49,4 +50,13 @@ openApiGenerate {
 	modelPackage.set("${basePackage}.application.model.gen")
 
 	additionalProperties.put("serviceInterface", true)
+}
+
+tasks.register("copyGen", Copy::class) {
+	from("$buildDir/generated") {
+		include("**/*.kt")
+		exclude("**/ApiUtil.kt")
+		exclude("**/*Test.kt")
+	}
+	into("$rootDir")
 }
