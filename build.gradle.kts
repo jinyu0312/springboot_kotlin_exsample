@@ -52,11 +52,13 @@ openApiGenerate {
 	additionalProperties.put("serviceInterface", true)
 }
 
-tasks.register("copyGen", Copy::class) {
+tasks.register("genFiles", Copy::class) {
+	dependsOn(tasks.openApiGenerate)
+
 	from("$buildDir/generated") {
 		include("**/*.kt")
 		exclude("**/ApiUtil.kt")
-		exclude("**/*Test.kt")
+		exclude("**/test/*")
 	}
 	into("$rootDir")
 }
