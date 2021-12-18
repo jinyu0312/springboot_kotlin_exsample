@@ -1,0 +1,15 @@
+.openapi-generator-ignore
+README.md
+build.gradle.kts
+pom.xml
+settings.gradle
+src/main/kotlin/com/jinyu0321/demo/Application.kt
+src/main/kotlin/com/jinyu0321/demo/application/model/gen/Error.kt
+src/main/kotlin/com/jinyu0321/demo/application/model/gen/NewPet.kt
+src/main/kotlin/com/jinyu0321/demo/application/model/gen/Pet.kt
+src/main/kotlin/com/jinyu0321/demo/presentation/gen/ApiUtil.kt
+src/main/kotlin/com/jinyu0321/demo/presentation/gen/Exceptions.kt
+src/main/kotlin/com/jinyu0321/demo/presentation/gen/PetsApi.kt
+src/main/kotlin/com/jinyu0321/demo/presentation/gen/PetsApiService.kt
+src/main/resources/application.yaml
+src/test/kotlin/com/jinyu0321/demo/presentation/gen/PetsApiTest.kt
